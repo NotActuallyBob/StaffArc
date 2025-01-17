@@ -8,8 +8,9 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using StaffArcApp.Services;
 using StaffArcApp.ViewModels;
+using StaffArcCore.Services;
+using StaffArcCore.Logs;
 
 namespace StaffArcApp
 {
@@ -21,7 +22,7 @@ namespace StaffArcApp
         public MainWindow()
         {
             InitializeComponent();
-            EmployeeService employeeService = new EmployeeService();
+            IEmployeeService employeeService = new FileEmployeeService("D:\\StaffArc", new MyLogger("StaffArcLog.txt"));
             DataContext = new EmployeeViewModel(employeeService);
         }
     }

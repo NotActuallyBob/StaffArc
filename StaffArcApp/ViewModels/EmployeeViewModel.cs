@@ -1,8 +1,8 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
-using StaffArcApp.Models;
-using StaffArcApp.Services;
+using StaffArcCore.Models;
+using StaffArcCore.Services;
 
 namespace StaffArcApp.ViewModels
 {
@@ -10,14 +10,14 @@ namespace StaffArcApp.ViewModels
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        private EmployeeService employeeService;
+        private IEmployeeService employeeService;
         
         public RelayCommand AddEmployeeCommand { get; }
 
         public ObservableCollection<Employee> Employees { get; set; }
         public Employee Employee { get; set; }
 
-        public EmployeeViewModel(EmployeeService employeeService)
+        public EmployeeViewModel(IEmployeeService employeeService)
         {
             this.employeeService = employeeService;
 
@@ -41,9 +41,10 @@ namespace StaffArcApp.ViewModels
 
         public void AddEmployee()
         {
-            employeeService.AddEmployee(new Employee(Employee.Name, Employee.Role));
+            employeeService.AddEmployee(new Employee(Employee.FirstName, Employee.LastName, Employee.Role));
             LoadData();
-            Employee.Name = string.Empty;
+            Employee.FirstName = string.Empty;
+            Employee.LastName = string.Empty;
             Employee.Role = string.Empty;
         }
     }
