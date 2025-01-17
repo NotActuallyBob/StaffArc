@@ -8,27 +8,31 @@ namespace StaffArc.ViewModels
 {
     internal class EmployeeViewModel : INotifyPropertyChanged
     {
+        public event PropertyChangedEventHandler? PropertyChanged;
+
         private EmployeeService employeeService;
         
+        public RelayCommand AddEmployeeCommand { get; }
+
+        public ObservableCollection<Employee> Employees { get; set; }
+        public Employee Employee { get; set; }
+
         public EmployeeViewModel(EmployeeService employeeService)
         {
             this.employeeService = employeeService;
-            Employee = new Employee();
-            LoadData();
+
             AddEmployeeCommand = new RelayCommand(AddEmployee);
+
+            Employee = new Employee();
+            Employees = new ObservableCollection<Employee>();
+
+            LoadData();
         }
 
         private void LoadData()
         {
             Employees = new ObservableCollection<Employee>(employeeService.GetEmployees());
         }
-
-        public RelayCommand AddEmployeeCommand { get; }
-
-        public event PropertyChangedEventHandler? PropertyChanged;
-
-        public ObservableCollection<Employee> Employees;
-        public Employee Employee { get; set; }
 
         protected void OnPropertyChanged(string propertyName)
         {
