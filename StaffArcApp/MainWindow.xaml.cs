@@ -10,7 +10,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using StaffArcApp.ViewModels;
 using StaffArcCore.Services;
-using StaffArcCore.Logs;
+using StaffArcCore.Loggers;
 
 namespace StaffArcApp
 {

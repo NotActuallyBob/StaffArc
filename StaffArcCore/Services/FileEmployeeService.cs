@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using StaffArcCore.Logs;
+using StaffArcCore.Loggers;
 using StaffArcCore.Models;
 
 namespace StaffArcCore.Services
