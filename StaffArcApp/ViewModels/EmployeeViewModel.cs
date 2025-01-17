@@ -1,10 +1,10 @@
 ﻿using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Windows.Input;
-using StaffArc.Models;
-using StaffArc.Services;
+using StaffArcApp.Models;
+using StaffArcApp.Services;
 
-namespace StaffArc.ViewModels
+namespace StaffArcApp.ViewModels
 {
     internal class EmployeeViewModel : INotifyPropertyChanged
     {

@@ -4,9 +4,9 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using StaffArc.Models;
+using StaffArcApp.Models;
 
-namespace StaffArc.Services
+namespace StaffArcApp.Services
 {
     internal class EmployeeService
     {

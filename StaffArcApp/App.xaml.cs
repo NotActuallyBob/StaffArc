@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace StaffArc
+namespace StaffArcApp
 {
     /// <summary>
     /// Interaction logic for App.xaml

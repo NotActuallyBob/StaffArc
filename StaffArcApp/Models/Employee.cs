@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace StaffArc.Models
+namespace StaffArcApp.Models
 {
     internal class Employee : INotifyPropertyChanged
     {

@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace StaffArc.Views
+namespace StaffArcApp.Views
 {
     /// <summary>
     /// Interaction logic for EmployeeListView.xaml
