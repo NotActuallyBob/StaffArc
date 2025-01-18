@@ -8,17 +8,11 @@
         Title="StaffArc" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <local:OverviewView Grid.Row="0"></local:OverviewView>
 
-        <!-- Adding Employee -->
-        <local:EmployeeView Grid.Row="0" />
-
-        <!-- Listing Employees -->
-        <local:EmployeeListView Grid.Row="1" />
-
-        <TextBlock Grid.Row="2" Text="{Binding Path=FooterText}"></TextBlock>
+        <TextBlock Grid.Row="1" Text="{Binding Path=FooterText}"></TextBlock>
     </Grid>
 </Window>

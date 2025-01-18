@@ -16,7 +16,7 @@ namespace StaffArcApp.ViewModels
 
         //public RelayCommand NavigateCommand { get; }
 
-        public MainViewModel(EmployeeViewModel employeeViewModel)
+        public MainViewModel(OverviewViewModel employeeViewModel)
         {
             applicationName = "StaffArc";
             version = "0.0.0";

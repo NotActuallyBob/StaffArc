@@ -15,8 +15,8 @@ namespace StaffArcApp.Ninject
         public override void Load()
         {
             Bind<MyLogger>().ToSelf().InSingletonScope().WithConstructorArgument("StaffArcLog.txt");
-            Bind<IEmployeeService>().To<FileEmployeeService>().WithConstructorArgument("D:\\StaffArc");
-            Bind<EmployeeViewModel>().ToSelf();
+            Bind<IEmployeeService>().To<FileEmployeeService>().InSingletonScope().WithConstructorArgument("D:\\StaffArc");
+            Bind<OverviewViewModel>().ToSelf();
         }
     }
 }
