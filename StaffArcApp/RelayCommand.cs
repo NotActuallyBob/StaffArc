@@ -9,23 +9,29 @@ namespace StaffArcApp
 {
     internal class RelayCommand : ICommand
     {
-        public event EventHandler? CanExecuteChanged;
+        private Action<object?> execute;
+        private Func<object?, bool>? canExecute;
 
-        private Action doWork;
-
-        public RelayCommand(Action doWork)
+        public event EventHandler? CanExecuteChanged
         {
-            this.doWork = doWork;
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
+
+        public RelayCommand(Action<object?> execute, Func<object?, bool>? canExecute = null)
+        {
+            this.execute = execute;
+            this.canExecute = canExecute;
         }
 
         public bool CanExecute(object? parameter)
         {
-            return true;
+            return canExecute == null || canExecute(parameter);
         }
 
         public void Execute(object? parameter)
         {
-            doWork();
+            execute(parameter);
         }
     }
 }

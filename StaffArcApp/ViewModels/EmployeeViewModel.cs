@@ -6,9 +6,8 @@ using StaffArcCore.Services;
 
 namespace StaffArcApp.ViewModels
 {
-    internal class EmployeeViewModel : INotifyPropertyChanged
+    internal class EmployeeViewModel : BaseViewModel
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
 
         private IEmployeeService employeeService;
         
@@ -34,12 +33,7 @@ namespace StaffArcApp.ViewModels
             Employees = new ObservableCollection<Employee>(employeeService.GetEmployees());
         }
 
-        protected void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-
-        public void AddEmployee()
+        public void AddEmployee(object? obj)
         {
             employeeService.AddEmployee(new Employee(Employee.FirstName, Employee.LastName, Employee.Role));
             LoadData();

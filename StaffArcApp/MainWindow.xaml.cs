@@ -22,8 +22,6 @@ namespace StaffArcApp
         public MainWindow()
         {
             InitializeComponent();
-            IEmployeeService employeeService = new FileEmployeeService("D:\\StaffArc", new MyLogger("StaffArcLog.txt"));
-            DataContext = new EmployeeViewModel(employeeService);
         }
     }
 }
