@@ -8,7 +8,9 @@ namespace StaffArcApp.ViewModels
 {
     internal class MainViewModel : BaseViewModel
     {
-        public string ApplicationName { get; set; } = "StaffArc";
+        private string applicationName;
+        private string version;
+        public string FooterText { get; set; }
 
         public BaseViewModel CurrentViewModel { get; private set; }
 
@@ -16,6 +18,9 @@ namespace StaffArcApp.ViewModels
 
         public MainViewModel(EmployeeViewModel employeeViewModel)
         {
+            applicationName = "StaffArc";
+            version = "0.0.0";
+            FooterText = applicationName + " " + version;
             CurrentViewModel = employeeViewModel;
             //NavigateCommand = new RelayCommand(NavigateTo);
         }

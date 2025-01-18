@@ -10,6 +10,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <!-- Adding Employee -->
@@ -17,5 +18,7 @@
 
         <!-- Listing Employees -->
         <local:EmployeeListView Grid.Row="1" />
+
+        <TextBlock Grid.Row="2" Text="{Binding Path=FooterText}"></TextBlock>
     </Grid>
 </Window>
